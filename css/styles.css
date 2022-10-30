@@ -4,7 +4,10 @@
 
 }
 
+#men {}
+
 body {
+    color: rgb(28, 3, 3);
     overflow-x: hidden;
     margin-left: 0px;
     margin-right: 0px;
@@ -16,8 +19,19 @@ body {
     margin-right: 0px;
     font-size: 40px;
     font-weight: bold;
-    border-bottom: 2px solid beige;
+    border-bottom: 2px solid white;
 }
+
+
+.odd {
+    padding-left: 85%;
+    width: 95%;
+    margin-right: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
 
 h1 {
     width: 25%;
@@ -37,7 +51,7 @@ h1 {
 }
 
 #menubar {
-    background-color: crimson;
+    background-color: #003df7;
     height: 80px;
     margin-top: -20px;
     width: 100%;
@@ -52,15 +66,6 @@ h1 {
 }
 
 
-.odd {
-    padding-left: 82%;
-    width: 95%;
-    margin-right: 0px;
-    font-size: 40px;
-    font-weight: bold;
-    border-bottom: 2px solid beige;
-}
-
 .content {
     width: 50%;
     font-size: 20px;
@@ -71,6 +76,42 @@ h1 {
     display: flex;
     flex-direction: column;
     background-color: lightblue;
+}
+
+.active {
+    background-color: #4991c4;
+    border: 2px solid #4991c4;
+    border-radius: 4px;
+    margin-top: 0px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: white;
+    box-shadow: 1px 1px 1px 1px #c6d1f2;
+    cursor: pointer;
+}
+
+.activeSelect {
+    background-color: #4991c4;
+    border: 2px solid #4991c4;
+    border-radius: 4px;
+    margin-top: 0px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: white;
+    box-shadow: 1px 1px 1px 1px #c6d1f2;
+    cursor: pointer;
+}
+
+.notActive {
+    margin-top: 0px;
+    font-weight: bold;
+    border: 2px solid #303d64;
+    padding-bottom: 5px;
+    background-color: #303d64;
+    color: white;
+    box-shadow: 1px 1px 1px 1px #c6d1f2;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 @media only screen and (max-width : 768px) {
