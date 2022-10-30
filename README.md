@@ -1,4 +1,10 @@
-# First web project
-## At first this project is a simple landing page with a simple dynamic motions 
-   The project was made by three main files index.html , styles.css , app.js <br>
-    I have met all the requirements which explained in the doc. 
+# Landing page project
+1. **Discribtion**
+   * This project is a simple landing page projet with an interactive view
+   * Dynamic add section which in the html file 
+2. **How to run the project**
+   * First download the project file then open the index.html file <br>then the project will run
+3. **Technologies used**
+   * HTML , css , javascript 
+4. **Developer Name**
+   * _**`Eslam Sayed Gouda`**_
