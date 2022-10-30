@@ -71,7 +71,7 @@ for (let i = 0; i < list.length; i++) {
           so the name of the class is "section-1" and the id of the list element
           will be ".section-1" so after getting it by the query selector 
           it will target the section which we want to scroll to */
-
+        //--------------------------------------------------------------------------------//
         // to prevent the default event of the anchor element
         event.preventDefault();
         // to scroll smoothly to the targerted section
