@@ -84,6 +84,5 @@ menu.style.cssText = "position : sticky ; top : 0"
 /*at the end the un oredered list which contain all the data and section
   will be appened as the last child of the menubar element*/
 menu.appendChild(ul)
-// Return to the first element when the script executed
-const First = document.querySelector('.section-1');
-First.scrollIntoView({ behavior: "smooth" })
+// Return to the top of the page when the script executed
+window.scrollTo({ top: 0, behavior: "smooth" })
