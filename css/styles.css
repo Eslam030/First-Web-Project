@@ -13,24 +13,6 @@ body {
     margin-right: 0px;
 }
 
-.even {
-    margin-left: 20px;
-    width: 95%;
-    margin-right: 0px;
-    font-size: 40px;
-    font-weight: bold;
-    border-bottom: 2px solid white;
-}
-
-
-.odd {
-    padding-left: 85%;
-    width: 95%;
-    margin-right: 0px;
-    font-size: 40px;
-    font-weight: bold;
-    border-bottom: 2px solid white;
-}
 
 
 h1 {
@@ -58,6 +40,24 @@ h1 {
     overflow: hidden
 }
 
+.even {
+    margin-left: 20px;
+    width: 95%;
+    margin-right: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+
+.odd {
+    padding-left: 85%;
+    width: 95%;
+    margin-right: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
 
 .contento {
     margin-left: 35%;
