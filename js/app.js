@@ -4,7 +4,7 @@ const list = []
 // Get their names by looping and getting the text content of the <h1> element
 for (let i = 0; i < content.length; i++) {
     list.push(content[i].firstElementChild.textContent);
-    content[i].style.cssText = "padding : 55px"
+    content[i].style.cssText = "padding : 50px"
 }
 // creat and un oredered list to contain the list whick contain the anchor element
 const ul = document.createElement('ul');
@@ -13,7 +13,6 @@ ul.setAttribute("id", "men")
 ul.style.columnGap = "30px"
 // select the menubar id that will contain the un oredered list
 const menu = document.querySelector('#menubar');
-let y = -50;
 // looping on the list of the headlines of each section and assign it to the anchor element
 for (let i = 0; i < list.length; i++) {
     // creat the list element
@@ -25,19 +24,6 @@ for (let i = 0; i < list.length; i++) {
     // creat the anchor element
     const an = document.createElement('a');
     an.style.cssText = "padding : 9px";
-    // add an event to change the color if the mouse over the anchor element
-    an.addEventListener("click", function (event) {
-        // get the children of the ul whcil id is men
-        const elements = document.querySelector('#men').children;
-        // deactivate all elements of the ul element
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].setAttribute("class", "notActive");
-        }
-        // activate the element which is clicked
-        event.target.parentElement.setAttribute("class", "active");
-    })
-    // add an event to return the color of the anchor element to the default after the mouse pointer is out
-
     // To make children interact with the mouse pointer
     an.addEventListener("mouseover", function (event) {
         if (event.target.parentElement.className != "active") {
@@ -86,3 +72,40 @@ menu.style.cssText = "position : sticky ; top : 0"
 menu.appendChild(ul)
 // Return to the top of the page when the script executed
 window.scrollTo({ top: 0, behavior: "smooth" })
+
+const scrollFun = function (event) {
+    // handle the last section
+    /* the if condition to check if the scroll is in the
+       end or not */
+    if (Math.round(window.innerHeight + window.scrollY + 4) == document.body.offsetHeight) {
+        // load the list elements
+        const elementOfMenu = document.querySelector('#men').children;
+        for (let j = 0; j < elementOfMenu.length; j++) {
+            // deactivate all elements
+            elementOfMenu[j].setAttribute("class", "notActive");
+        }
+        // activate the last element
+        elementOfMenu[elementOfMenu.length - 1].setAttribute("class", "active");
+    } else {
+        // load the sections 
+        const elements = document.querySelector('#contain').children;
+        for (let i = 0; i < elements.length; i++) {
+            // check if the section is in view or not 
+            if (elements[i].getBoundingClientRect().bottom >= 1) {
+                // load list elements
+                const elementOfMenu = document.querySelector('#men').children;
+                for (let j = 0; j < elementOfMenu.length; j++) {
+                    /*check if the section class = the list element id
+                      and activate it*/
+                    if (elementOfMenu[j].id == '.' + elements[i].className) {
+                        elementOfMenu[j].setAttribute("class", "active");
+                    } else {
+                        elementOfMenu[j].setAttribute("class", "notActive");
+                    }
+                }
+                break;
+            }
+        }
+    }
+}
+document.addEventListener('scroll', scrollFun)
