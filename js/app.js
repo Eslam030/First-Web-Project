@@ -109,3 +109,14 @@ const scrollFun = function (event) {
     }
 }
 document.addEventListener('scroll', scrollFun)
+
+// give the optimal padding when the page is loaded
+let padding_1 = "padding-left : " + (window.innerWidth - 315).toString() + "px";
+document.querySelector('.odd').style.cssText = padding_1;
+
+/* add an event when the page size changes
+   the padding changes to fit the screen new size*/
+window.addEventListener('resize', function () {
+    let padding = "padding-left : " + (window.innerWidth - 315).toString() + "px";
+    document.querySelector('.odd').style.cssText = padding;
+})
