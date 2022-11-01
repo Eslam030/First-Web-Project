@@ -117,12 +117,36 @@ for (let i = 0; i < change.length; i++) {
     change[i].style.cssText = padding_1;
 }
 
+// To load the navbar and give its elements the optimal font-size
+const menBar = document.querySelector('#men').children;
+for (let i = 0; i < menBar.length; i++) {
+    let font = "font-size : " + (Math.round(30 - (1535 - window.innerWidth) / 50)).toString() + "px";
+    if (window.innerWidth <= 700) {
+        menBar[i].style.cssText = font + "; margin-top : 15px"
+    } else {
+        menBar[i].style.cssText = font;
+    }
+}
+
 /* add an event when the page size changes
-   the padding changes to fit the screen new size*/
+   the padding changes to fit the screen new size
+   and give the elements of the nav bar the optimal font-size*/
 window.addEventListener('resize', function () {
+    // this fot padding and load the sections 
     let padding = "padding-left : " + (window.innerWidth - 315).toString() + "px";
     const change = document.querySelectorAll('.odd');
     for (let i = 0; i < change.length; i++) {
         change[i].style.cssText = padding;
+    }
+
+    // this for font size and loading thenav bar elements
+    const menBar = document.querySelector('#men').children;
+    for (let i = 0; i < menBar.length; i++) {
+        let font = "font-size : " + (Math.round(30 - (1535 - window.innerWidth) / 50)).toString() + "px";
+        if (window.innerWidth <= 700) {
+            menBar[i].style.cssText = font + "; margin-top : 15px"
+        } else {
+            menBar[i].style.cssText = font;
+        }
     }
 })
